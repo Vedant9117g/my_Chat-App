@@ -4,6 +4,7 @@ const initialState = {
   user: null,
   isAuthenticated: false,
   selectedUser: null, // Added selectedUser to state
+  onlineUsers:null,
 };
 
 const authSlice = createSlice({
@@ -22,8 +23,11 @@ const authSlice = createSlice({
     setSelectedUser: (state, action) => {
       state.selectedUser = action.payload; // Set selected user
     },
+    setOnlineUsers: (state, action) => {
+      state.onlineUsers = action.payload;
+    },
   },
 });
 
-export const { userLoggedIn, userLoggedOut, setSelectedUser } = authSlice.actions;
+export const { userLoggedIn, userLoggedOut, setSelectedUser,setOnlineUsers } = authSlice.actions;
 export default authSlice.reducer;

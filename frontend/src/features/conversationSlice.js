@@ -20,8 +20,11 @@ const conversationSlice = createSlice({
       }
       state.messages[receiverId].push(message);
     },
+    setMessages: (state, action) => {
+      state.messages = action.payload;
+    },
   },
 });
 
-export const { setActiveChat, addMessage } = conversationSlice.actions;
+export const { setActiveChat, addMessage ,setMessages } = conversationSlice.actions;
 export default conversationSlice.reducer;
